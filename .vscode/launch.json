@@ -1,0 +1,69 @@
+{
+    // Используйте IntelliSense, чтобы узнать о возможных атрибутах.
+    // Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
+    // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug with params",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=minigrep",
+                    "--package=minigrep"
+                    
+                ],
+                "filter": {
+                    "name": "minigrep",
+                    "kind": "bin"
+                }
+            },
+            "args": [
+                "to",
+                "poem.txt"
+            ],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug without params",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=minigrep",
+                    "--package=minigrep"
+                    
+                ],
+                "filter": {
+                    "name": "minigrep",
+                    "kind": "bin"
+                }
+            },
+            "args": [
+            ],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'minigrep'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=minigrep",
+                    "--package=minigrep"
+                ],
+                "filter": {
+                    "name": "minigrep",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
